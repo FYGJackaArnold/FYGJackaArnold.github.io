@@ -5,11 +5,11 @@
         const url = new URL(window.location.href)
         var text;
         if(url.searchParams.has("copy")){
-          text = "https://fygplanners1.sharepoint.com" + url.searchParams.get("copy")
+          text = url.searchParams.get("copy")
           bodyText = "Copied text \""+ text + "\" to the clipboard."
           var success;
           try {
-            navigator.clipboard.writeText(text)
+            navigator.clipboard.writeText("https://fygplanners1.sharepoint.com" + text)
             success = true
           } catch (e) {
             bodyText = "Failed to set text to clipboard. Copy it manually: " + text
@@ -37,4 +37,4 @@
     
   
 
-No "copy" parameter applied to URL.</body></html>
+</body></html>
